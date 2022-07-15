@@ -13,3 +13,9 @@ func _on_credits():
 
 func _on_hi_score():
 	print("show hi score")
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if Input.is_action_pressed("click"):
+			if not OS.window_fullscreen:
+				OS.window_fullscreen = true
