@@ -1,8 +1,8 @@
 extends Node2D
 
 var draggable = false
+var clickable = true
 
-var clickable = false
 var mouse_in = false
 var dragged = false
 var mouse_position = Vector2.ZERO
@@ -27,11 +27,13 @@ func _input(event):
 			if not Gamestate.mouse_has_child:
 				Gamestate.mouse_has_child = true
 				dragged = true
-				_on_clicked()
+				if clickable:
+					_on_clicked()
 		if Input.is_action_just_released("click"):
 			Gamestate.mouse_has_child = false
 			dragged = false
-			_on_released()
+			if clickable:
+				_on_released()
 	elif event is InputEventMouseMotion:
 	   mouse_position = event.position
 
