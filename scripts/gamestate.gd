@@ -8,3 +8,10 @@ const Ingredients = {
 	Egg = 2,
 	Salad = 3
 }
+
+const DieTypes = {
+	Vegetable = 0,
+	Fruit = 1,
+	Meat = 2,
+	Seasoning = 3
+}
