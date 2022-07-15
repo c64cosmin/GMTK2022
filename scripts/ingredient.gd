@@ -6,6 +6,7 @@ var scale_extra = 1
 var scale_extra_target = 1
 var destination = Vector2.ZERO
 var moving_speed = 1200
+var bar = null
 
 func set_type(new_type):
 	type = new_type
@@ -37,3 +38,9 @@ func move_to_destination(delta):
 	var move_speed = min(moving_speed, move_direction.length()/delta)
 	global_transform.origin = global_transform.origin + \
 	move_direction.normalized()*move_speed*delta
+
+func _on_clicked():
+	bar.remove_ingredient(self)
+
+func _on_released():
+	bar.add_ingredient(self)

@@ -11,7 +11,8 @@ func _process(_delta):
 	arrange_ingredients()
 
 func add_ingredient(ingredient):
-	ingredients.push_back(ingredient)
+	if ingredients.find(ingredient) == -1:
+		ingredients.push_back(ingredient)
 
 func arrange_ingredients():
 	for i in range(0, ingredients.size()):
@@ -24,4 +25,8 @@ func spawn_ingredient(position):
 		get_parent().add_child(new_ingredient)
 		new_ingredient.transform.origin = position
 		new_ingredient.set_type(randi()%4)
+		new_ingredient.bar = self
 		ingredients.push_back(new_ingredient)
+
+func remove_ingredient(ingredient):
+	ingredients.erase(ingredient)
