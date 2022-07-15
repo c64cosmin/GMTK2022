@@ -1,19 +1,42 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://UnderAttack.ttf" type="DynamicFontData" id=1]
-
-[sub_resource type="DynamicFont" id=1]
-size = 75
-outline_size = 6
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+[ext_resource path="res://resources/bigfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/bigfont_material.tres" type="Material" id=2]
+[ext_resource path="res://resources/titlefont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=4]
 
 [node name="main_menu" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="title" type="RichTextLabel" parent="."]
-margin_left = 14.0
-margin_top = 18.0
-margin_right = 778.0
-margin_bottom = 211.0
-custom_fonts/normal_font = SubResource( 1 )
-text = "Salad dice"
+material = ExtResource( 2 )
+margin_left = -1.0
+margin_top = 23.0
+margin_right = 1023.0
+margin_bottom = 216.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "DICE SALAD"
+
+[node name="start" type="Button" parent="."]
+margin_left = 299.0
+margin_top = 175.0
+margin_right = 689.0
+margin_bottom = 301.0
+custom_fonts/font = ExtResource( 1 )
+text = "start"
+
+[node name="credits" type="Button" parent="."]
+margin_left = 299.0
+margin_top = 316.0
+margin_right = 689.0
+margin_bottom = 442.0
+custom_fonts/font = ExtResource( 1 )
+text = "credits"
+
+[node name="hiscore" type="Button" parent="."]
+margin_left = 299.0
+margin_top = 455.0
+margin_right = 689.0
+margin_bottom = 581.0
+custom_fonts/font = ExtResource( 1 )
+text = "hi-score"
