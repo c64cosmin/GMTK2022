@@ -5,9 +5,12 @@ var time = 0
 var scale_extra = 1
 var scale_extra_target = 1
 
+func set_type(new_type):
+	type = new_type
+	$Sprite.frame = new_type
+
 func _ready():
 	draggable = true
-	$Sprite.frame = type
 
 func _process(delta):
 	time += delta*(scale_extra*3+3)

@@ -28,6 +28,7 @@ func _process(delta):
 			var new_ingredient = ingredient.instance()
 			get_parent().add_child(new_ingredient)
 			new_ingredient.transform.origin = transform.origin
+			new_ingredient.set_type(randi()%4)
 			queue_free()
 
 func _on_clicked():
