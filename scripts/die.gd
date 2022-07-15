@@ -1,5 +1,6 @@
 extends "res://scripts/clickable.gd"
 
+var smoke = preload("res://objects/smoke.tscn")
 var type = Gamestate.Ingredients.Tomato
 var time = 0
 var being_rolled = false
@@ -49,6 +50,9 @@ func roll_the_die(delta):
 				$Sprite.frame = randi()%4
 				show_new_face = 0.1
 		else:
+			var new_smoke = smoke.instance()
+			get_node("/root/game/").add_child(new_smoke)
+			new_smoke.global_transform.origin = global_transform.origin
 			spawner.die_was_rolled(self)
 			get_node("/root/game/ingredient_bar").spawn_ingredient(global_transform.origin)
 			queue_free()
