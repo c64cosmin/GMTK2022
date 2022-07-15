@@ -10,20 +10,20 @@ script = ExtResource( 4 )
 
 [node name="title" type="RichTextLabel" parent="."]
 material = ExtResource( 2 )
-margin_left = 527.0
-margin_top = 17.0
-margin_right = 1484.0
-margin_bottom = 334.0
+margin_left = 460.0
+margin_top = 20.0
+margin_right = 1417.0
+margin_bottom = 337.0
 grow_horizontal = 0
 custom_fonts/normal_font = ExtResource( 3 )
 text = "credits"
 
 [node name="text" type="RichTextLabel" parent="."]
 material = ExtResource( 2 )
-margin_left = 330.0
-margin_top = 433.0
-margin_right = 1789.0
-margin_bottom = 785.0
+margin_left = 235.0
+margin_top = 436.0
+margin_right = 1694.0
+margin_bottom = 788.0
 grow_horizontal = 0
 custom_fonts/normal_font = ExtResource( 1 )
 text = "programming                  c64cosmin
