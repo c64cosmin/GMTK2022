@@ -22,7 +22,7 @@ func set_type(new_type):
 func _ready():
 	$Sprite.material = $Sprite.material.duplicate()
 	$Sprite.frame = randi()%6
-	set_type(randi()%3)
+	set_type(randi()%Gamestate.number_of_categories)
 
 func _process(delta):
 	animate_shape(delta)
@@ -33,6 +33,10 @@ func _on_clicked():
 	being_rolled = true
 	roll_timer = 1
 	clickable = false
+
+func _on_other_clicked():
+	spawn_smoke()
+	queue_free()
 
 func move_to_destination(delta):
 	var move_direction = destination - global_transform.origin

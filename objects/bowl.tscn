@@ -21,7 +21,7 @@ visible = false
 scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 3 )
-hframes = 8
+hframes = 4
 vframes = 4
 
 [node name="required" type="Node2D" parent="."]

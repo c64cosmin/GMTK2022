@@ -1,5 +1,8 @@
 extends Node2D
 
+const number_of_ingredients = 4
+const number_of_categories = 3
+
 var score = 0
 var mouse_has_child = false
 var item_container = null

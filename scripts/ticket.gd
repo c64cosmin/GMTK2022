@@ -36,8 +36,33 @@ func set_patience_face(face):
 	
 func create_recipe(l, p, pm):
 	set_length(ceil(l*90/128+0.5))
-	for i in range(0, l):
-		create_item(i)
+	if l == 1:
+		create_item(0, 0)
+	if l == 2:
+		create_item(0, 0)
+		create_item(1, 0)
+	if l == 3:
+		create_item(0, 0)
+		create_item(1, 0)
+		create_item(2, 0)
+	if l == 4:
+		create_item(0, 0)
+		create_item(1, 0)
+		create_item(2, 0)
+		create_item(3, 0)
+	if l == 5:
+		create_item(0, 0)
+		create_item(1, 0)
+		create_item(2, 0)
+		create_item(3, 0)
+		create_item(4, 0)
+	if l == 6:
+		create_item(0, 0)
+		create_item(1, 0)
+		create_item(2, 0)
+		create_item(3, 0)
+		create_item(4, 0)
+		create_item(5, 0)
 	patience = p
 	patience_multiplier = pm
 
@@ -58,12 +83,12 @@ func create_paper_part(position, end):
 	else:
 		new_paper.frame = 0
 
-func create_item(position):
+func create_item(position, category):
 	var new_item = $item_template.duplicate()
 	$items.add_child(new_item)
 	new_item.visible = true
 	new_item.transform.origin = Vector2(0, position*90)
-	new_item.frame = randi()%4
+	new_item.frame = randi()%Gamestate.number_of_ingredients + category*Gamestate.number_of_ingredients
 
 func move_to_destination(delta):
 	var move_direction = destination - global_transform.origin

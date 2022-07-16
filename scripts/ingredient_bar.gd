@@ -26,7 +26,7 @@ func spawn_ingredient(position, dice_type):
 		var new_ingredient = ingredient.instance()
 		get_parent().add_child(new_ingredient)
 		new_ingredient.transform.origin = position
-		new_ingredient.set_type(randi()%6 + dice_type*6)
+		new_ingredient.set_type(randi()%Gamestate.number_of_ingredients + dice_type*Gamestate.number_of_ingredients)
 		new_ingredient.bar = self
 		ingredients.push_back(new_ingredient)
 

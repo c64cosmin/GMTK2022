@@ -28,7 +28,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 3 )
 offset = Vector2( 0, 32 )
-hframes = 8
+hframes = 4
 vframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]

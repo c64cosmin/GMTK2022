@@ -44,6 +44,11 @@ func _on_clicked():
 	usable = true
 	bar.remove_ingredient(self)
 
+func _on_other_clicked():
+	print("it happens")
+	bar.remove_ingredient(self)
+	destination = get_node("/root/game/recyclebin").global_transform.origin
+
 func _on_released():
 	bar.add_ingredient(self)
 	

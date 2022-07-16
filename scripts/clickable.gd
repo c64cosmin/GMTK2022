@@ -23,6 +23,9 @@ func on_mouse_exited():
 
 func _input(event):
 	if event is InputEventMouseButton:
+		if mouse_in and Input.is_action_pressed("destroy"):
+			if clickable:
+				_on_other_clicked()
 		if mouse_in and Input.is_action_pressed("click"):
 			if not Gamestate.mouse_has_child:
 				Gamestate.mouse_has_child = true
@@ -41,4 +44,7 @@ func _on_clicked():
 	pass
 
 func _on_released():
+	pass
+
+func _on_other_clicked():
 	pass
