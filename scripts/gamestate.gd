@@ -11,10 +11,18 @@ var people_patience = 90
 var active_ticket = null
 
 const Ingredients = {
-	Tomato = 0,
-	Avocado = 1,
-	Egg = 2,
-	Salad = 3
+	Salad = 0,
+	Tomato = 1,
+	Avocado = 2,
+	Mushroom = 3,
+	Corn = 4,
+	Peas = 5,
+	Pasta = 6,
+	Rice = 7,
+	Meat = 8,
+	Cheese = 9,
+	Egg = 10,
+	Chicken = 11,
 }
 
 const DieTypes = {

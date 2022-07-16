@@ -33,36 +33,56 @@ func set_patience_face(face):
 		face.frame = 4
 	if patience < 20:
 		face.frame = 5
-	
+
+func add_base(position):
+	var roll = randi()%100
+	if roll < 10:
+		create_random_item(position, 1)
+		return
+	if roll < 50:
+		create_random_item(position, 2)
+		return
+	create_random_item(position, 0)
+
+func add_veggie(position):
+	create_random_item(position, 0)
+
+func add_toping(position):
+	create_random_item(position, 1)
+
+func add_meat(position):
+	create_random_item(position, 2)
+
+func add_extra(position):
+	var roll = randi()%100
+	if roll < 60:
+		create_item(position, Gamestate.Ingredients.Cheese)
+		return
+	if roll < 80:
+		create_item(position, Gamestate.Ingredients.Egg)
+		return
+	if roll < 90:
+		create_item(position, Gamestate.Ingredients.Salad)
+		return
+	create_item(position, Gamestate.Ingredients.Avocado)
+
 func create_recipe(l, p, pm):
 	set_length(ceil(l*90/128+0.5))
-	if l == 1:
-		create_item(0, 0)
-	if l == 2:
-		create_item(0, 0)
-		create_item(1, 0)
-	if l == 3:
-		create_item(0, 0)
-		create_item(1, 0)
-		create_item(2, 0)
-	if l == 4:
-		create_item(0, 0)
-		create_item(1, 0)
-		create_item(2, 0)
-		create_item(3, 0)
-	if l == 5:
-		create_item(0, 0)
-		create_item(1, 0)
-		create_item(2, 0)
-		create_item(3, 0)
-		create_item(4, 0)
-	if l == 6:
-		create_item(0, 0)
-		create_item(1, 0)
-		create_item(2, 0)
-		create_item(3, 0)
-		create_item(4, 0)
-		create_item(5, 0)
+	if l >= 1:
+		add_base(0)
+	if l >= 2:
+		add_toping(1)
+	if l >= 3:
+		add_meat(2)
+	if l >= 4:
+		if randi()%2 == 0:
+			add_veggie(3)
+		else:
+			add_extra(3)
+	if l >= 5:
+		add_extra(4)
+	if l >= 6:
+		add_extra(5)
 	patience = p
 	patience_multiplier = pm
 
@@ -83,12 +103,16 @@ func create_paper_part(position, end):
 	else:
 		new_paper.frame = 0
 
-func create_item(position, category):
+func create_random_item(position, category):
+	var type = randi()%Gamestate.number_of_ingredients + category*Gamestate.number_of_ingredients
+	create_item(position, type)
+
+func create_item(position, type):
 	var new_item = $item_template.duplicate()
 	$items.add_child(new_item)
 	new_item.visible = true
 	new_item.transform.origin = Vector2(0, position*90)
-	new_item.frame = randi()%Gamestate.number_of_ingredients + category*Gamestate.number_of_ingredients
+	new_item.frame = type
 
 func move_to_destination(delta):
 	var move_direction = destination - global_transform.origin

@@ -8,15 +8,20 @@ var scale_extra_target = 1
 var destination = Vector2.ZERO
 var moving_speed = 1200
 var bar = null
+var draggable_timer = 0.6
 
 func set_type(new_type):
 	type = new_type
 	$Sprite.frame = new_type
 
 func _ready():
-	draggable = true
+	draggable = false
 
 func _process(delta):
+	draggable_timer -= delta
+	if draggable_timer <= 0:
+		draggable_timer = 0
+		draggable = true
 	animate_shape(delta)
 	move_to_destination(delta)
 	inflate_on_click()
@@ -41,11 +46,11 @@ func move_to_destination(delta):
 	move_direction.normalized()*move_speed*delta
 
 func _on_clicked():
-	usable = true
+	if draggable_timer <= 0:
+		usable = true
 	bar.remove_ingredient(self)
 
 func _on_other_clicked():
-	print("it happens")
 	bar.remove_ingredient(self)
 	destination = get_node("/root/game/recyclebin").global_transform.origin
 
