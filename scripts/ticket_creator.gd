@@ -9,12 +9,15 @@ var tickets = []
 var max_tickets = 8
 
 func _process(delta):
-	spawn_period -= delta*0.07
 	arrange_tickets()
 	if spawning:
 		spawn_timer -= delta
 		if spawn_timer <= 0:
 			spawn_timer = spawn_period
+			spawn_period -= 0.2
+			if randi()%10 == 0:
+				spawn_period += 2
+			print(spawn_period)
 			spawn()
 
 func spawn():

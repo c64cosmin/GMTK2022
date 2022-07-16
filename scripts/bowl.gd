@@ -55,6 +55,8 @@ func remove_ingredient(type):
 			$required.remove_child(item)
 			item.queue_free()
 			arrange_ingredients()
+			if $required.get_child_count() == 0:
+				submit_food()
 			return
 	penalty += penalty_counter
 	penalty_counter += 0.6

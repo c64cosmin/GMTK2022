@@ -2,7 +2,7 @@ extends Node2D
 
 var ingredient = preload("res://objects/ingredient.tscn")
 var ingredients = []
-var max_ingredients = 12
+var max_ingredients = 24
 
 func _ready():
 	pass # Replace with function body.
@@ -17,7 +17,7 @@ func add_ingredient(ingredient):
 func arrange_ingredients():
 	for i in range(0, ingredients.size()):
 		var ing = ingredients[i]
-		ing.destination = global_transform.origin + Vector2(i*150, 0)
+		ing.destination = global_transform.origin + Vector2(i*150-floor(i/12)*150*12, -floor(i/12)*150)
 
 func spawn_ingredient(position):
 	if ingredients.size() < max_ingredients:

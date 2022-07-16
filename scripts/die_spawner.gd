@@ -9,6 +9,8 @@ var dices = []
 
 func _ready():
 	spawn_timer = spawn_period
+	for i in range(0,5):
+		spawn()
 
 func _process(delta):
 	arrange_dice()
