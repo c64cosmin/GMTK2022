@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://textures/texture.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var timer = 0.3
+
+func _process(delta):
+	timer -= delta
+	scale += Vector2(delta,delta)*4
+	if timer < 0:
+		queue_free()
+"
+
+[node name="dying_star" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="star_template" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )

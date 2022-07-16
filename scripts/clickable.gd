@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	if dragged and draggable:
-		transform.origin = mouse_position
+		global_transform.origin = mouse_position
 
 func on_mouse_entered():
 	mouse_in = true

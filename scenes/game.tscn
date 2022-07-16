@@ -1,17 +1,70 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
-[ext_resource path="res://objects/die.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/ingredient.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/die_spawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/ingredient_bar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/recyclebin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/ticket_creator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/bowl.tscn" type="PackedScene" id=6]
+[ext_resource path="res://resources/bigfont_material.tres" type="Material" id=7]
+[ext_resource path="res://resources/UnderAttack.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://textures/texture.png" type="Texture" id=9]
+[ext_resource path="res://scenes/pause_menu.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 3
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 8 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="die" parent="." instance=ExtResource( 2 )]
-position = Vector2( 575, 231 )
+[node name="die_spawner" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1818, 69 )
 
-[node name="ingredient" parent="." instance=ExtResource( 3 )]
-position = Vector2( 136, 404 )
+[node name="ingredient_bar" parent="." instance=ExtResource( 3 )]
+position = Vector2( 44, 966 )
 
-[node name="ingredient2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 144, 163 )
+[node name="recyclebin" parent="." instance=ExtResource( 4 )]
+position = Vector2( 142, 523 )
+
+[node name="ticket_creator" parent="." instance=ExtResource( 5 )]
+position = Vector2( 47, -5 )
+
+[node name="bowl" parent="." instance=ExtResource( 6 )]
+position = Vector2( 855, 456 )
+
+[node name="score" type="RichTextLabel" parent="."]
+material = ExtResource( 7 )
+margin_left = 1175.0
+margin_top = 5.0
+margin_right = 1675.0
+margin_bottom = 250.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Score:"
+
+[node name="rating" type="RichTextLabel" parent="."]
+material = ExtResource( 7 )
+margin_left = 1179.0
+margin_top = 4.0
+margin_right = 1779.0
+margin_bottom = 249.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "
+Rating:"
+
+[node name="stars" type="Node2D" parent="rating"]
+position = Vector2( 280, 111 )
+
+[node name="dying_stars" type="Node2D" parent="rating"]
+position = Vector2( 280, 111 )
+
+[node name="star_template" type="Sprite" parent="rating"]
+visible = false
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="pause_menu" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 930, 302 )

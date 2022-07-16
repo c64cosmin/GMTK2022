@@ -10,28 +10,30 @@ script = ExtResource( 4 )
 
 [node name="title" type="RichTextLabel" parent="."]
 material = ExtResource( 2 )
-margin_left = 19.0
-margin_top = 17.0
-margin_right = 1043.0
-margin_bottom = 210.0
+margin_left = 460.0
+margin_top = 20.0
+margin_right = 1417.0
+margin_bottom = 337.0
 grow_horizontal = 0
 custom_fonts/normal_font = ExtResource( 3 )
 text = "credits"
 
 [node name="text" type="RichTextLabel" parent="."]
 material = ExtResource( 2 )
-margin_left = 25.0
-margin_top = 180.0
-margin_right = 1049.0
-margin_bottom = 373.0
+margin_left = 235.0
+margin_top = 436.0
+margin_right = 1694.0
+margin_bottom = 788.0
 grow_horizontal = 0
 custom_fonts/normal_font = ExtResource( 1 )
-text = "credits"
+text = "programming                  c64cosmin
+
+Artwork                                 Lucian"
 
 [node name="exit" type="Button" parent="."]
-margin_left = 837.0
-margin_top = 502.0
-margin_right = 1012.0
-margin_bottom = 591.0
+margin_left = 1656.0
+margin_top = 930.0
+margin_right = 1897.0
+margin_bottom = 1048.0
 custom_fonts/font = ExtResource( 1 )
 text = "back"

@@ -10,33 +10,44 @@ script = ExtResource( 4 )
 
 [node name="title" type="RichTextLabel" parent="."]
 material = ExtResource( 2 )
-margin_left = -1.0
-margin_top = 23.0
-margin_right = 1023.0
-margin_bottom = 216.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 306.0
+margin_top = -16.0
+margin_right = 1628.0
+margin_bottom = 319.0
 custom_fonts/normal_font = ExtResource( 3 )
 text = "DICE SALAD"
 
 [node name="start" type="Button" parent="."]
-margin_left = 299.0
-margin_top = 175.0
-margin_right = 689.0
-margin_bottom = 301.0
+margin_left = 741.0
+margin_top = 335.0
+margin_right = 1228.0
+margin_bottom = 518.0
 custom_fonts/font = ExtResource( 1 )
 text = "start"
 
+[node name="gameover" type="Button" parent="."]
+visible = false
+margin_left = 88.0
+margin_top = 304.0
+margin_right = 575.0
+margin_bottom = 487.0
+custom_fonts/font = ExtResource( 1 )
+text = "gameover"
+
 [node name="credits" type="Button" parent="."]
-margin_left = 299.0
-margin_top = 316.0
-margin_right = 689.0
-margin_bottom = 442.0
+margin_left = 741.0
+margin_top = 583.0
+margin_right = 1228.0
+margin_bottom = 766.0
 custom_fonts/font = ExtResource( 1 )
 text = "credits"
 
 [node name="hiscore" type="Button" parent="."]
-margin_left = 299.0
-margin_top = 455.0
-margin_right = 689.0
-margin_bottom = 581.0
+margin_left = 741.0
+margin_top = 831.0
+margin_right = 1228.0
+margin_bottom = 1014.0
 custom_fonts/font = ExtResource( 1 )
 text = "hi-score"
