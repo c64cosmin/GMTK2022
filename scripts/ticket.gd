@@ -7,6 +7,10 @@ var moving_speed = 1200
 var spawner = null
 var patience = 1
 var patience_multiplier = 1
+var person_face = 0
+
+func _ready():
+	person_face = randi()%5
 
 func _process(delta):
 	move_to_destination(delta)
@@ -33,6 +37,7 @@ func set_patience_face(face):
 		face.frame = 4
 	if patience < 20:
 		face.frame = 5
+	face.frame += person_face*6
 
 func add_base(position):
 	var roll = randi()%100

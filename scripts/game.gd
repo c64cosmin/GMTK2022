@@ -14,6 +14,7 @@ func debug():
 		text += "difficulty: " + str(Gamestate.difficulty) + "\n"
 		text += "people_patience: " + str(Gamestate.people_patience) + "\n"
 		text += "spawn_period: " + str($ticket_creator.spawn_period) + "\n"
+		text += "spawn_timer: " + str($ticket_creator.spawn_timer) + "\n"
 		$debug.text = text
 	else:
 		$debug.visible = false

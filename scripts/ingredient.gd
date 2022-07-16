@@ -21,7 +21,7 @@ func _process(delta):
 	draggable_timer -= delta
 	if draggable_timer <= 0:
 		draggable_timer = 0
-		draggable = true
+		draggable = false
 	animate_shape(delta)
 	move_to_destination(delta)
 	inflate_on_click()
@@ -48,16 +48,18 @@ func move_to_destination(delta):
 func _on_clicked():
 	if draggable_timer <= 0:
 		usable = true
-	bar.remove_ingredient(self)
+	if usable:
+		destination = get_node("/root/game/bowl").global_transform.origin
+		bar.remove_ingredient(self)
 
 func _on_other_clicked():
 	bar.remove_ingredient(self)
 	destination = get_node("/root/game/recyclebin").global_transform.origin
 
 func _on_released():
+	return
 	bar.add_ingredient(self)
 	
-	return
 	var container = Gamestate.item_container
 	if container.mouse_in:
 		container.on_dropped_item(self)
