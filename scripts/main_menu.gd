@@ -17,6 +17,5 @@ func _on_hi_score():
 func _input(event):
 	if event is InputEventMouseButton:
 		if Input.is_action_pressed("click"):
-			if not OS.window_fullscreen:
-				return
+			if not OS.is_debug_build() and not OS.window_fullscreen:
 				OS.window_fullscreen = true
