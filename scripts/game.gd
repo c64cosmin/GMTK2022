@@ -25,11 +25,13 @@ func _process(delta):
 	$nextclient.text = "Next client in " + str(ceil($ticket_creator.spawn_timer)) + "seconds"
 	Gamestate.people_patience -= delta*0.07
 	Gamestate.difficulty += delta*0.1
-	if Gamestate.difficulty > 30:
+	if Gamestate.difficulty > 20:
 		Gamestate.people_patience_max -= 10
 		Gamestate.people_patience = Gamestate.people_patience_max
 		Gamestate.level += 1
 		Gamestate.difficulty = 1
+		$ticket_creator.spawn_period = 15
+		$ticket_creator.spawn_timer = 20
 		if Gamestate.level >= 4:
 			Gamestate.level = 4
 		

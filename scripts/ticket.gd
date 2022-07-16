@@ -20,7 +20,7 @@ func _process(delta):
 		destination.y = -(length-1)*256*0.5
 	$Area2D.scale.y = (length+1)
 	$Area2D.position.y = $Area2D.scale.y*256*0.5/2
-	patience -= 2*delta*patience_multiplier
+	patience -= 3*delta*patience_multiplier
 	set_patience_face($patience)
 	if patience < 0:
 		failed_ticket()
@@ -78,15 +78,23 @@ func level1_list():
 
 func level2_list():
 	var l = randi()%int(min(4,Gamestate.difficulty)) + 1
-	for i in range(0, l):
-		if randi()%3 == 0:
+	add_meat(0)
+	for i in range(1, l):
+		if randi()%7 == 0:
 			add_meat(i)
 		else:
 			add_veggie(i)
 
-func spoj_de_ureche():
-	var l = randi()%int(Gamestate.difficulty) + 1
-	set_length(ceil(l*90/128+0.5))
+func level3_list():
+	var l = randi()%int(min(4,Gamestate.difficulty)) + 1
+	add_meat(0)
+	add_toping(1)
+	for i in range(0, l-1):
+		add_veggie(i)
+	add_extra(l-1)
+
+func level4_list():
+	var l = randi()%int(min(6,Gamestate.difficulty)) + 1
 	if l >= 1:
 		add_base(0)
 	if l >= 2:
@@ -108,10 +116,10 @@ func create_recipe_list():
 		level1_list()
 	elif Gamestate.level <= 2:
 		level2_list()
-	#elif Gamestate.level <= 3:
-		#level3_list()
-	#elif Gamestate.level <= 4:
-		#level4_list()
+	elif Gamestate.level <= 3:
+		level3_list()
+	elif Gamestate.level <= 4:
+		level4_list()
 	
 	var l = $items.get_child_count()
 	set_length(ceil(l*90/128+0.5))
@@ -168,7 +176,7 @@ func remove_ticket_from_bar():
 
 func failed_ticket():
 	remove_ticket_from_bar()
-	if randi()%5 == 0:
+	if randi()%3 == 0:
 		get_node("/root/game").remove_star()
 	if Gamestate.active_ticket == self:
 		get_node("/root/game/bowl").clean_bowl()

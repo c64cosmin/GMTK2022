@@ -17,9 +17,11 @@ func _process(delta):
 		spawn_timer -= delta
 		if spawn_timer <= 0:
 			spawn_timer = spawn_period
+			if randi()%3 == 0:
+				spawn_timer /= 2
 			spawn_period -= 0.4
 			if spawn_period < 1:
-				spawn_period = 1
+				spawn_period = 7
 			if randi()%10 == 0:
 				spawn_period += 1
 				if spawn_period > 10:

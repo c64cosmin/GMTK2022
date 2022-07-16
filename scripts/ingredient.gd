@@ -6,7 +6,7 @@ var time = 0
 var scale_extra = 1
 var scale_extra_target = 1
 var destination = Vector2.ZERO
-var moving_speed = 1200
+var moving_speed = 2200
 var bar = null
 var draggable_timer = 0.6
 

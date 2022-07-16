@@ -51,7 +51,7 @@ func _on_clicked():
 	clickable = false
 
 func _on_other_clicked():
-	get_node("/root/game/die_spawner").spawn_timer -= 0.85
+	get_node("/root/game/die_spawner").spawn_timer -= 0.8
 	spawn_smoke()
 	queue_free()
 
