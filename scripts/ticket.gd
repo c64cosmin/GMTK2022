@@ -20,7 +20,7 @@ func _process(delta):
 		destination.y = -(length-1)*256*0.5
 	$Area2D.scale.y = (length+1)
 	$Area2D.position.y = $Area2D.scale.y*256*0.5/2
-	patience -= delta*patience_multiplier
+	patience -= 2*delta*patience_multiplier
 	set_patience_face($patience)
 	if patience < 0:
 		failed_ticket()

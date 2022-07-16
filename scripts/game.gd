@@ -22,6 +22,7 @@ func debug():
 func _process(delta):
 	debug()
 	$score.text = "Score: " + String(Gamestate.score)
+	$nextclient.text = "Next client in " + str(ceil($ticket_creator.spawn_timer)) + "seconds"
 	Gamestate.people_patience -= delta*0.07
 	Gamestate.difficulty += delta*0.1
 	if Gamestate.difficulty > 30:
