@@ -7,7 +7,6 @@ var spawn_timer = 30
 var spawning = true
 var tickets = []
 var max_tickets = 8
-var difficulty = 1
 
 func _ready():
 	randomize()
@@ -29,10 +28,7 @@ func spawn():
 		add_child(new_ticket)
 		new_ticket.global_transform.origin = global_transform.origin
 		new_ticket.spawner = self
-		var patience = Gamestate.people_patience + randi()%20
-		var patience_multiplier = 1 - randf()*0.6
-		var recipe_length = randi()%difficulty + 1
-		new_ticket.create_recipe(difficulty, patience, patience_multiplier)
+		new_ticket.create_recipe_list()
 		tickets.push_back(new_ticket)
 
 func arrange_tickets():

@@ -68,3 +68,9 @@ texture = ExtResource( 9 )
 [node name="pause_menu" parent="." instance=ExtResource( 10 )]
 visible = false
 position = Vector2( 930, 302 )
+
+[node name="debug" type="TextEdit" parent="."]
+margin_left = 656.0
+margin_top = 600.0
+margin_right = 1041.0
+margin_bottom = 750.0

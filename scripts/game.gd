@@ -7,9 +7,30 @@ func _ready():
 	Gamestate.score = 0
 	add_stars(5)
 
+func debug():
+	if OS.is_debug_build():
+		var text = ""
+		text += "level: " + str(Gamestate.level) + "\n"
+		text += "difficulty: " + str(Gamestate.difficulty) + "\n"
+		text += "people_patience: " + str(Gamestate.people_patience) + "\n"
+		text += "spawn_period: " + str($ticket_creator.spawn_period) + "\n"
+		$debug.text = text
+	else:
+		$debug.visible = false
+
 func _process(delta):
+	debug()
 	$score.text = "Score: " + String(Gamestate.score)
 	Gamestate.people_patience -= delta*0.07
+	Gamestate.difficulty += delta*0.1
+	if Gamestate.difficulty > 20:
+		Gamestate.people_patience_max -= 10
+		Gamestate.people_patience = Gamestate.people_patience_max
+		Gamestate.level += 1
+		Gamestate.difficulty = 1
+		if Gamestate.level >= 4:
+			Gamestate.level = 4
+		
 	if $rating/stars.get_child_count() == 0 and $rating/dying_stars.get_child_count() == 0:
 		game_over()
 

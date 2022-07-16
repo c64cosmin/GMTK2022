@@ -66,7 +66,21 @@ func add_extra(position):
 		return
 	create_item(position, Gamestate.Ingredients.Avocado)
 
-func create_recipe(l, p, pm):
+func level1_list():
+	var l = randi()%int(min(5,Gamestate.difficulty)) + 1
+	for i in range(0, l):
+		add_veggie(i)
+
+func level2_list():
+	var l = randi()%int(min(4,Gamestate.difficulty)) + 1
+	for i in range(0, l):
+		if randi()%3 == 0:
+			add_meat(i)
+		else:
+			add_veggie(i)
+
+func spoj_de_ureche():
+	var l = randi()%int(Gamestate.difficulty) + 1
 	set_length(ceil(l*90/128+0.5))
 	if l >= 1:
 		add_base(0)
@@ -83,8 +97,21 @@ func create_recipe(l, p, pm):
 		add_extra(4)
 	if l >= 6:
 		add_extra(5)
-	patience = p
-	patience_multiplier = pm
+
+func create_recipe_list():
+	if Gamestate.level <= 1:
+		level1_list()
+	elif Gamestate.level <= 2:
+		level2_list()
+	#elif Gamestate.level <= 3:
+		#level3_list()
+	#elif Gamestate.level <= 4:
+		#level4_list()
+	
+	var l = $items.get_child_count()
+	set_length(ceil(l*90/128+0.5))
+	patience = Gamestate.people_patience + randi()%20
+	patience_multiplier = 1 - randf()*0.6
 
 func set_length(l):
 	length = l

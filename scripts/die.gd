@@ -22,7 +22,23 @@ func set_type(new_type):
 func _ready():
 	$Sprite.material = $Sprite.material.duplicate()
 	$Sprite.frame = randi()%6
-	set_type(randi()%Gamestate.number_of_categories)
+	if Gamestate.level == 1:
+		set_type(0)
+	if Gamestate.level == 2:
+		if randi()%3 == 0:
+			set_type(Gamestate.DieTypes.Meat)
+		else:
+			set_type(Gamestate.DieTypes.Veggies)
+	if Gamestate.level == 3:
+		if randi()%3 == 0:
+			set_type(Gamestate.DieTypes.Veggies)
+		else:
+			if randi()%3 == 0:
+				set_type(Gamestate.DieTypes.Filler)
+			else:
+				set_type(Gamestate.DieTypes.Meat)
+	if Gamestate.level == 4:
+		set_type(randi()%Gamestate.number_of_categories)
 
 func _process(delta):
 	animate_shape(delta)
