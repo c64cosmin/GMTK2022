@@ -6,7 +6,7 @@ func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 
 func _input(event):
-	if Input.is_action_pressed("exit"):
+	if Input.is_action_just_pressed("exit"):
 		visible = !visible
 		get_tree().paused = visible
 

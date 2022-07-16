@@ -1,5 +1,6 @@
 extends Node2D
 
+var dying_star = preload("res://objects/dying_star.tscn")
 var stars = 0
 
 func _ready():
@@ -29,6 +30,9 @@ func add_stars(n):
 		$rating/stars.add_child(new_star)
 
 func remove_star():
+	var poc_star = dying_star.instance()
+	$stars.add_child(poc_star)
+	poc_star.position.x = stars*64
 	add_stars(stars - 1)
 	if stars == 0:
 		game_over()

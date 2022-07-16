@@ -7,6 +7,7 @@ var penalty_counter = 0
 var patience = 0
 
 func _ready():
+	randomize()
 	$buttonContainer/Button.connect("pressed", self, "submit_food")
 
 func _process(delta):
@@ -80,10 +81,17 @@ func score_curve(x):
 
 func submit_score():
 	var final_score = score
-	var errors = penalty + score_curve($required.get_child_count()*1.5)
-	var decrease = max(0,errors*0.5 - 20)
+	var missed_ingredients = $required.get_child_count()
+	var errors = (penalty + score_curve(missed_ingredients*1.5))*3
 	if errors > 0:
-		if randi()%6 == 0:
+		var low_score_chance = 10
+		if Gamestate.active_ticket != null:
+			if Gamestate.active_ticket.patience <= 40:
+				low_score_chance += 10
+			if Gamestate.active_ticket.patience <= 20:
+				low_score_chance += 10
+		low_score_chance += missed_ingredients*5
+		if randi()%100 < low_score_chance:
 			get_node("/root/game").remove_star()
 	final_score = ceil(max(0,final_score - errors))
-	Gamestate.add_score(final_score - decrease)
+	Gamestate.add_score(final_score)
