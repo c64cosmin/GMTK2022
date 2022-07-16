@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.47433592"
-     inkscape:cx="781.09202"
-     inkscape:cy="943.42423"
+     inkscape:zoom="1"
+     inkscape:cx="788.5"
+     inkscape:cy="605.5"
      inkscape:window-width="2560"
      inkscape:window-height="1377"
      inkscape:window-x="2552"
@@ -40,7 +40,10 @@
      id="layer1">
     <g
        id="g7976"
-       transform="translate(36.814627,-5.0201764)">
+       transform="translate(36.814627,-5.0201764)"
+       inkscape:export-filename="C:\Users\ghita\Desktop\Desk-Gamejam\GMTK2022\raw\background\backgroujnd-placeholder.png"
+       inkscape:export-xdpi="265.117"
+       inkscape:export-ydpi="265.117">
       <rect
          style="fill:#dff3c1;fill-opacity:0;stroke-width:1.79717;stroke-linecap:square;stroke-linejoin:bevel;paint-order:markers fill stroke"
          id="rect850"
@@ -138,5 +141,29 @@
          x="-104.99628"
          y="-36.089642" />
     </g>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.31364;stroke-linecap:square;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="rect8759"
+       width="38.987045"
+       height="45.567604"
+       x="203.22368"
+       y="138.60153"
+       transform="matrix(0.99980525,-0.01973484,0.03752598,0.99929565,0,0)" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.546605;stroke-linecap:square;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="rect8169"
+       width="89.354256"
+       height="50.899696"
+       x="185.85713"
+       y="135.04271"
+       transform="matrix(1,0,-0.1985014,0.9801006,0,0)" />
+    <rect
+       style="fill:#1c1c1c;fill-opacity:1;stroke-width:0.48546;stroke-linecap:square;stroke-linejoin:bevel;paint-order:markers fill stroke"
+       id="rect8627"
+       width="82.789879"
+       height="43.332363"
+       x="192.0856"
+       y="139.4371"
+       transform="matrix(1,0,-0.21603712,0.97638515,0,0)" />
   </g>
 </svg>
