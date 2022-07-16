@@ -1,7 +1,11 @@
 extends Node2D
 
+var score = 0
 var mouse_has_child = false
 var item_container = null
+
+var people_patience = 70
+var active_ticket = null
 
 const Ingredients = {
 	Tomato = 0,

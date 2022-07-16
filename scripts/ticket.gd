@@ -53,9 +53,12 @@ func move_to_destination(delta):
 	move_direction.normalized()*move_speed*delta
 
 func _on_clicked():
+	if Gamestate.active_ticket != null:
+		return
+	Gamestate.active_ticket = self
 	spawner.remove_ticket(self)
 	var ingredients = []
 	for item in $items.get_children():
 		ingredients.push_back(item.frame)
 	get_node("/root/game/bowl").set_needed_ingredients(ingredients)
-	queue_free()
+	self.visible = false

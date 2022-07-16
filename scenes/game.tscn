@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://objects/die_spawner.tscn" type="PackedScene" id=2]
@@ -6,6 +6,14 @@
 [ext_resource path="res://objects/recyclebin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/ticket_creator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/bowl.tscn" type="PackedScene" id=6]
+[ext_resource path="res://resources/bigfont_material.tres" type="Material" id=7]
+[ext_resource path="res://resources/UnderAttack.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 3
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 8 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,3 +32,12 @@ position = Vector2( 47, -5 )
 
 [node name="bowl" parent="." instance=ExtResource( 6 )]
 position = Vector2( 855, 456 )
+
+[node name="score" type="RichTextLabel" parent="."]
+material = ExtResource( 7 )
+margin_left = 1175.0
+margin_top = 5.0
+margin_right = 2330.0
+margin_bottom = 250.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Score:"
