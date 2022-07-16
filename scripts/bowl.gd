@@ -3,8 +3,9 @@ extends "res://scripts/container.gd"
 func on_item_enter(item):
 	var ingredient = item.get_parent()
 	if ingredient.is_in_group("item"):
-		remove_ingredient(ingredient.type)
-		ingredient.consume()
+		if ingredient.usable:
+			remove_ingredient(ingredient.type)
+			ingredient.consume()
 
 func set_needed_ingredients(ingredients):
 	for ingredient in $required.get_children():

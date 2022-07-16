@@ -1,6 +1,7 @@
 extends "res://scripts/clickable.gd"
 
 var type = Gamestate.Ingredients.Tomato
+var usable = false
 var time = 0
 var scale_extra = 1
 var scale_extra_target = 1
@@ -40,6 +41,7 @@ func move_to_destination(delta):
 	move_direction.normalized()*move_speed*delta
 
 func _on_clicked():
+	usable = true
 	bar.remove_ingredient(self)
 
 func _on_released():
