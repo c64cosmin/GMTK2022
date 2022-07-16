@@ -1,6 +1,7 @@
 extends Node2D
 
 var mouse_has_child = false
+var item_container = null
 
 const Ingredients = {
 	Tomato = 0,
@@ -11,7 +12,7 @@ const Ingredients = {
 
 const DieTypes = {
 	Vegetable = 0,
-	Fruit = 1,
-	Meat = 2,
+	Meat = 1,
+	Fruit = 2,
 	Seasoning = 3
 }

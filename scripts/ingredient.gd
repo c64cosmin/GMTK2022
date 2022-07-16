@@ -44,3 +44,19 @@ func _on_clicked():
 
 func _on_released():
 	bar.add_ingredient(self)
+	
+	return
+	var container = Gamestate.item_container
+	if container.mouse_in:
+		container.on_dropped_item(self)
+
+func consume():
+	bar.remove_ingredient(self)
+	queue_free()
+	spawn_smoke()
+
+var smoke = preload("res://objects/smoke.tscn")
+func spawn_smoke():
+	var new_smoke = smoke.instance()
+	get_node("/root/game/").add_child(new_smoke)
+	new_smoke.global_transform.origin = global_transform.origin

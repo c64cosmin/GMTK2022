@@ -1,7 +1,6 @@
 extends "res://scripts/clickable.gd"
 
-var smoke = preload("res://objects/smoke.tscn")
-var type = Gamestate.Ingredients.Tomato
+var type = Gamestate.DieTypes.Vegetable
 var time = 0
 var being_rolled = false
 var roll_timer = 0
@@ -9,13 +8,21 @@ var show_new_face = 0
 var spawner = null
 var destination = Vector2.ZERO
 var moving_speed = 1200
+var textures = [
+	preload("res://textures/die_green.png"),
+	preload("res://textures/die_red.png"),
+	preload("res://textures/die_blue.png"),
+	preload("res://textures/die_yellow.png")
+]
 
 func set_type(new_type):
 	type = new_type
-	$Sprite.frame = new_type
+	$Sprite.material.set_shader_param("material", textures[new_type])
 
 func _ready():
-	$Sprite.frame = type
+	$Sprite.material = $Sprite.material.duplicate()
+	$Sprite.frame = randi()%6
+	set_type(randi()%4)
 
 func _process(delta):
 	animate_shape(delta)
@@ -47,12 +54,17 @@ func roll_the_die(delta):
 			if show_new_face > 0:
 				show_new_face -= delta
 			if show_new_face <= 0:
-				$Sprite.frame = randi()%4
+				$Sprite.frame = randi()%12
 				show_new_face = 0.1
 		else:
-			var new_smoke = smoke.instance()
-			get_node("/root/game/").add_child(new_smoke)
-			new_smoke.global_transform.origin = global_transform.origin
-			spawner.die_was_rolled(self)
 			get_node("/root/game/ingredient_bar").spawn_ingredient(global_transform.origin)
+			spawner.die_was_rolled(self)
+			spawn_smoke()
 			queue_free()
+
+var smoke = preload("res://objects/smoke.tscn")
+func spawn_smoke():
+	var new_smoke = smoke.instance()
+	get_node("/root/game/").add_child(new_smoke)
+	new_smoke.global_transform.origin = global_transform.origin
+	spawner.die_was_rolled(self)
