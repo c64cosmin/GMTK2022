@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://objects/die_spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/ingredient_bar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/recyclebin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/ticket.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/ticket_creator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/bowl.tscn" type="PackedScene" id=6]
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,5 +19,8 @@ position = Vector2( 44, 966 )
 [node name="recyclebin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 142, 523 )
 
-[node name="ticket" parent="." instance=ExtResource( 5 )]
-position = Vector2( 860, 179 )
+[node name="ticket_creator" parent="." instance=ExtResource( 5 )]
+position = Vector2( 47, -5 )
+
+[node name="bowl" parent="." instance=ExtResource( 6 )]
+position = Vector2( 855, 456 )
