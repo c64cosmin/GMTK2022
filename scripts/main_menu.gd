@@ -5,6 +5,8 @@ func _ready():
 	$credits.connect("pressed", self, "_on_credits")
 	$hiscore.connect("pressed", self, "_on_hi_score")
 	$gameover.connect("pressed", self, "_on_gameover")
+	if OS.is_debug_build():
+		$gameover.visible = true
 
 func _on_start():
 	get_tree().change_scene("res://scenes/game.tscn")
