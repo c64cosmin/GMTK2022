@@ -28,6 +28,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "start"
 
 [node name="gameover" type="Button" parent="."]
+visible = false
 margin_left = 88.0
 margin_top = 304.0
 margin_right = 575.0
