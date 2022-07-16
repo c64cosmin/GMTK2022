@@ -24,7 +24,7 @@ func _process(delta):
 	$score.text = "Score: " + String(Gamestate.score)
 	Gamestate.people_patience -= delta*0.07
 	Gamestate.difficulty += delta*0.1
-	if Gamestate.difficulty > 20:
+	if Gamestate.difficulty > 30:
 		Gamestate.people_patience_max -= 10
 		Gamestate.people_patience = Gamestate.people_patience_max
 		Gamestate.level += 1

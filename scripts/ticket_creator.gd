@@ -3,7 +3,7 @@ extends Node2D
 var ticket = preload("res://objects/ticket.tscn")
 
 var spawn_period = 10
-var spawn_timer = 30
+var spawn_timer = 20
 var spawning = true
 var tickets = []
 var max_tickets = 8
@@ -19,8 +19,14 @@ func _process(delta):
 			spawn_timer = spawn_period
 			spawn_period -= 0.4
 			if randi()%10 == 0:
-				spawn_period += 2
+				spawn_period += 1
+				if spawn_period > 10:
+					spawn_period = 10
 			spawn()
+			if randi()% 5 == 0:
+				spawn()
+				if randi()%2 == 0:
+					spawn()
 
 func spawn():
 	if tickets.size() < max_tickets:

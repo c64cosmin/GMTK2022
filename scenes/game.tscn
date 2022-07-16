@@ -24,7 +24,7 @@ script = ExtResource( 1 )
 position = Vector2( 1818, 69 )
 
 [node name="ingredient_bar" parent="." instance=ExtResource( 3 )]
-position = Vector2( 44, 966 )
+position = Vector2( 64, 966 )
 
 [node name="recyclebin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 142, 523 )

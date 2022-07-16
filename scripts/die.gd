@@ -28,10 +28,10 @@ func _ready():
 		if randi()%3 == 0:
 			set_type(Gamestate.DieTypes.Meat)
 		else:
-			set_type(Gamestate.DieTypes.Veggies)
+			set_type(Gamestate.DieTypes.Vegetable)
 	if Gamestate.level == 3:
 		if randi()%3 == 0:
-			set_type(Gamestate.DieTypes.Veggies)
+			set_type(Gamestate.DieTypes.Vegetable)
 		else:
 			if randi()%3 == 0:
 				set_type(Gamestate.DieTypes.Filler)
@@ -51,7 +51,7 @@ func _on_clicked():
 	clickable = false
 
 func _on_other_clicked():
-	get_node("/root/game/die_spawner").spawn_timer -= 0.7
+	get_node("/root/game/die_spawner").spawn_timer -= 0.85
 	spawn_smoke()
 	queue_free()
 

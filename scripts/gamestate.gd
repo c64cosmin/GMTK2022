@@ -30,7 +30,7 @@ const Ingredients = {
 
 const DieTypes = {
 	Vegetable = 0,
-	Filled = 1,
+	Filler = 1,
 	Meat = 2,
 	Seasoning = 3
 }
