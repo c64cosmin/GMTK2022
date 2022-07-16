@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/ticket.gd" type="Script" id=1]
 [ext_resource path="res://textures/ticket.png" type="Texture" id=2]
-[ext_resource path="res://textures/ingredients_test.png" type="Texture" id=3]
+[ext_resource path="res://textures/ingredients.png" type="Texture" id=3]
 [ext_resource path="res://textures/patience.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -28,8 +28,8 @@ scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 3 )
 offset = Vector2( 0, 32 )
-hframes = 2
-vframes = 2
+hframes = 8
+vframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 

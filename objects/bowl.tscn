@@ -2,7 +2,7 @@
 
 [ext_resource path="res://textures/bowl.png" type="Texture" id=1]
 [ext_resource path="res://scripts/bowl.gd" type="Script" id=2]
-[ext_resource path="res://textures/ingredients_test.png" type="Texture" id=3]
+[ext_resource path="res://textures/ingredients.png" type="Texture" id=3]
 [ext_resource path="res://textures/deliver.png" type="Texture" id=4]
 [ext_resource path="res://resources/bigfont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://textures/patience.png" type="Texture" id=6]
@@ -21,8 +21,8 @@ visible = false
 scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 3 )
-hframes = 2
-vframes = 2
+hframes = 8
+vframes = 4
 
 [node name="required" type="Node2D" parent="."]
 position = Vector2( 0, -180 )
