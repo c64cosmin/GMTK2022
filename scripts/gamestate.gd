@@ -16,8 +16,8 @@ const Ingredients = {
 
 const DieTypes = {
 	Vegetable = 0,
-	Meat = 1,
-	Fruit = 2,
+	Filled = 1,
+	Meat = 2,
 	Seasoning = 3
 }
 

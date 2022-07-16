@@ -10,8 +10,8 @@ var destination = Vector2.ZERO
 var moving_speed = 1200
 var textures = [
 	preload("res://textures/die_green.png"),
-	preload("res://textures/die_red.png"),
 	preload("res://textures/die_blue.png"),
+	preload("res://textures/die_red.png"),
 	preload("res://textures/die_yellow.png")
 ]
 
@@ -22,7 +22,7 @@ func set_type(new_type):
 func _ready():
 	$Sprite.material = $Sprite.material.duplicate()
 	$Sprite.frame = randi()%6
-	set_type(randi()%4)
+	set_type(randi()%3)
 
 func _process(delta):
 	animate_shape(delta)
@@ -57,7 +57,8 @@ func roll_the_die(delta):
 				$Sprite.frame = randi()%12
 				show_new_face = 0.1
 		else:
-			get_node("/root/game/ingredient_bar").spawn_ingredient(global_transform.origin)
+			var bar = get_node("/root/game/ingredient_bar")
+			bar.spawn_ingredient(global_transform.origin, type)
 			spawner.die_was_rolled(self)
 			spawn_smoke()
 			queue_free()

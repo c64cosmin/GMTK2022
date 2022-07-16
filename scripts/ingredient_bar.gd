@@ -21,12 +21,12 @@ func arrange_ingredients():
 		var offset = Vector2(i*150-floor(i/12)*150*12, -floor(i/12)*150)
 		ing.destination = global_transform.origin + offset
 
-func spawn_ingredient(position):
+func spawn_ingredient(position, dice_type):
 	if ingredients.size() < max_ingredients:
 		var new_ingredient = ingredient.instance()
 		get_parent().add_child(new_ingredient)
 		new_ingredient.transform.origin = position
-		new_ingredient.set_type(randi()%4)
+		new_ingredient.set_type(randi()%6 + dice_type*6)
 		new_ingredient.bar = self
 		ingredients.push_back(new_ingredient)
 
