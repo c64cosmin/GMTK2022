@@ -54,4 +54,8 @@ func move_to_destination(delta):
 
 func _on_clicked():
 	spawner.remove_ticket(self)
+	var ingredients = []
+	for item in $items.get_children():
+		ingredients.push_back(item.frame)
+	get_node("/root/game/bowl").set_needed_ingredients(ingredients)
 	queue_free()
