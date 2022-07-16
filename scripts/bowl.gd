@@ -76,6 +76,4 @@ func submit_score():
 	var errors = penalty + score_curve($required.get_child_count()*1.5)
 	var decrease = max(0,errors*0.5 - 20)
 	final_score = ceil(max(0,final_score - errors))
-	Gamestate.score += final_score - decrease
-	if Gamestate.score <= 0:
-		Gamestate.score = 0
+	Gamestate.add_score(final_score - decrease)

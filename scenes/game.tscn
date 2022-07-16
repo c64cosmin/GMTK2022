@@ -43,20 +43,20 @@ margin_bottom = 250.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Score:"
 
-[node name="stars" type="Node2D" parent="."]
-position = Vector2( 1487, 148 )
-
-[node name="star" type="Sprite" parent="stars"]
-visible = false
-position = Vector2( -32, -23 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
-
 [node name="rating" type="RichTextLabel" parent="."]
 material = ExtResource( 7 )
-margin_left = 1177.0
-margin_top = 91.0
-margin_right = 2332.0
-margin_bottom = 336.0
+margin_left = 1179.0
+margin_top = 4.0
+margin_right = 2334.0
+margin_bottom = 249.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "Rating:"
+text = "
+Rating:"
+
+[node name="stars" type="Node2D" parent="rating"]
+position = Vector2( 280, 111 )
+
+[node name="star_template" type="Sprite" parent="rating"]
+visible = false
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )

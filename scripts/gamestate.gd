@@ -20,3 +20,8 @@ const DieTypes = {
 	Fruit = 2,
 	Seasoning = 3
 }
+
+func add_score(s):
+	score += s
+	if score <= 0:
+		score = 0

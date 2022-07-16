@@ -1,13 +1,10 @@
 extends Node2D
 
+var stars = 0
+
 func _ready():
 	Gamestate.score = 0
-	for i in range(0,5):
-		var new_star = $stars/star.duplicate()
-		new_star.position.x += i*64
-		new_star.rotation = randf()*360
-		new_star.visible = true
-		$stars.add_child(new_star)
+	add_stars(5)
 
 func _process(delta):
 	$score.text = "Score: " + String(Gamestate.score)
@@ -19,3 +16,18 @@ func _input(event):
 			if not OS.window_fullscreen:
 				return
 				OS.window_fullscreen = true
+
+func add_stars(n):
+	stars = n
+	for star in $rating/stars.get_children():
+		star.remove_child(star)
+		star.queue_free()
+	for i in range(0,n):
+		var new_star = $rating/star_template.duplicate()
+		new_star.position.x += i*64
+		new_star.rotation = randf()*360
+		new_star.visible = true
+		$rating/stars.add_child(new_star)
+
+func remove_star():
+	add_stars(stars - 1)

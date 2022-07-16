@@ -17,6 +17,18 @@ func _process(delta):
 	$Area2D.scale.y = length
 	$Area2D.position.y = length*256*0.5/2
 	patience -= delta*patience_multiplier
+	if patience < 50:
+		$patience.frame = 1
+	if patience < 40:
+		$patience.frame = 2
+	if patience < 30:
+		$patience.frame = 3
+	if patience < 20:
+		$patience.frame = 4
+	if patience < 10:
+		$patience.frame = 5
+	if patience < 0:
+		failed_ticket()
 
 func create_recipe(l, p, pm):
 	set_length(ceil(l*90/128+0.5))
@@ -59,9 +71,19 @@ func _on_clicked():
 	if Gamestate.active_ticket != null:
 		return
 	Gamestate.active_ticket = self
-	spawner.remove_ticket(self)
 	var ingredients = []
 	for item in $items.get_children():
 		ingredients.push_back(item.frame)
 	get_node("/root/game/bowl").set_needed_ingredients(ingredients)
+	remove_ticket_from_bar()
+
+func remove_ticket_from_bar():
+	spawner.remove_ticket(self)
 	self.visible = false
+
+func failed_ticket():
+	remove_ticket_from_bar()
+	queue_free()
+	Gamestate.add_score(-50)
+	if randi()%5 == 0:
+		get_node("/root/game").remove_star()
