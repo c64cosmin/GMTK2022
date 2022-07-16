@@ -17,7 +17,8 @@ func add_ingredient(ingredient):
 func arrange_ingredients():
 	for i in range(0, ingredients.size()):
 		var ing = ingredients[i]
-		ing.destination = global_transform.origin + Vector2(i*150-floor(i/12)*150*12, -floor(i/12)*150)
+		var offset = Vector2(i*150-floor(i/12)*150*12, -floor(i/12)*150)
+		ing.destination = global_transform.origin + offset
 
 func spawn_ingredient(position):
 	if ingredients.size() < max_ingredients:
