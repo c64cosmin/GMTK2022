@@ -79,7 +79,3 @@ margin_right = 1879.0
 margin_bottom = 207.0
 custom_fonts/font = ExtResource( 4 )
 text = "cancel"
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
-[node name="HTTPRequest2" type="HTTPRequest" parent="."]
