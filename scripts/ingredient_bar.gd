@@ -5,6 +5,7 @@ var ingredients = []
 var max_ingredients = 24
 
 func _ready():
+	randomize()
 	pass # Replace with function body.
 
 func _process(_delta):

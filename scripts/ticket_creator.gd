@@ -2,11 +2,14 @@ extends Node2D
 
 var ticket = preload("res://objects/ticket.tscn")
 
-var spawn_period = 10
+var spawn_period = 1#10
 var spawn_timer = 30
 var spawning = true
 var tickets = []
 var max_tickets = 8
+
+func _ready():
+	randomize()
 
 func _process(delta):
 	arrange_tickets()

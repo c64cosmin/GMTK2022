@@ -22,15 +22,16 @@ func _process(delta):
 		failed_ticket()
 
 func set_patience_face(face):
-	if patience < 50:
+	face.frame = 0
+	if patience < 60:
 		face.frame = 1
-	if patience < 40:
+	if patience < 50:
 		face.frame = 2
-	if patience < 30:
+	if patience < 40:
 		face.frame = 3
-	if patience < 20:
+	if patience < 30:
 		face.frame = 4
-	if patience < 10:
+	if patience < 20:
 		face.frame = 5
 	
 func create_recipe(l, p, pm):

@@ -8,6 +8,7 @@ var max_die = 7
 var dices = []
 
 func _ready():
+	randomize()	
 	spawn_timer = spawn_period
 	for i in range(0,5):
 		spawn()

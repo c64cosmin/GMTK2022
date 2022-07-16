@@ -82,5 +82,8 @@ func submit_score():
 	var final_score = score
 	var errors = penalty + score_curve($required.get_child_count()*1.5)
 	var decrease = max(0,errors*0.5 - 20)
+	if errors > 0:
+		if randi()%6 == 0:
+			get_node("/root/game").remove_star()
 	final_score = ceil(max(0,final_score - errors))
 	Gamestate.add_score(final_score - decrease)
