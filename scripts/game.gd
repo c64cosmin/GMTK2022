@@ -31,3 +31,8 @@ func add_stars(n):
 
 func remove_star():
 	add_stars(stars - 1)
+	if stars == 0:
+		game_over()
+
+func game_over():
+	get_tree().change_scene("res://scenes/gameover.tscn")

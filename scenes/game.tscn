@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://objects/die_spawner.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://resources/bigfont_material.tres" type="Material" id=7]
 [ext_resource path="res://resources/UnderAttack.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://textures/texture.png" type="Texture" id=9]
+[ext_resource path="res://scenes/pause_menu.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -38,7 +39,7 @@ position = Vector2( 855, 456 )
 material = ExtResource( 7 )
 margin_left = 1175.0
 margin_top = 5.0
-margin_right = 2330.0
+margin_right = 1675.0
 margin_bottom = 250.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Score:"
@@ -47,7 +48,7 @@ text = "Score:"
 material = ExtResource( 7 )
 margin_left = 1179.0
 margin_top = 4.0
-margin_right = 2334.0
+margin_right = 1779.0
 margin_bottom = 249.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "
@@ -60,3 +61,7 @@ position = Vector2( 280, 111 )
 visible = false
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 9 )
+
+[node name="pause_menu" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 930, 302 )
