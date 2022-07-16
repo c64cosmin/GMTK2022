@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/titlefont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/bigfont_material.tres" type="Material" id=2]
+[ext_resource path="res://scripts/hiscores.gd" type="Script" id=3]
+[ext_resource path="res://scenes/score_manager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/UnderAttack.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 5 )
+
+[node name="hiscores" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="title" type="RichTextLabel" parent="."]
+material = ExtResource( 2 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 348.0
+margin_top = 2.0
+margin_right = 1535.0
+margin_bottom = 316.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Hi scores"
+
+[node name="scores" type="RichTextLabel" parent="."]
+margin_left = 590.0
+margin_top = 293.0
+margin_right = 1322.0
+margin_bottom = 1049.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "ENTRIES"
+
+[node name="score_manager" parent="." instance=ExtResource( 4 )]
