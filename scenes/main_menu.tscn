@@ -27,6 +27,14 @@ margin_bottom = 518.0
 custom_fonts/font = ExtResource( 1 )
 text = "start"
 
+[node name="gameover" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 304.0
+margin_right = 575.0
+margin_bottom = 487.0
+custom_fonts/font = ExtResource( 1 )
+text = "start"
+
 [node name="credits" type="Button" parent="."]
 margin_left = 741.0
 margin_top = 583.0
