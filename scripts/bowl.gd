@@ -12,6 +12,10 @@ func _ready():
 func _process(delta):
 	bonus_score -= delta
 	patience -= delta
+	$patience.visible = false
+	if Gamestate.active_ticket != null:
+		$patience.visible = true
+		Gamestate.active_ticket.set_patience_face($patience)
 
 func on_item_enter(item):
 	var ingredient = item.get_parent()
@@ -57,8 +61,9 @@ func remove_ingredient(type):
 
 func submit_food():
 	submit_score()
-	Gamestate.active_ticket.queue_free()
-	Gamestate.active_ticket = null
+	if Gamestate.active_ticket != null:
+		Gamestate.active_ticket.queue_free()
+		Gamestate.active_ticket = null
 	clean_bowl()
 	compute_score(0)
 

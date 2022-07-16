@@ -8,7 +8,7 @@ func _ready():
 
 func _process(delta):
 	$score.text = "Score: " + String(Gamestate.score)
-	Gamestate.people_patience -= delta*0.1
+	Gamestate.people_patience -= delta*0.07
 
 func _input(event):
 	if event is InputEventMouseButton:

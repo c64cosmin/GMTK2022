@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://textures/bowl.png" type="Texture" id=1]
 [ext_resource path="res://scripts/bowl.gd" type="Script" id=2]
 [ext_resource path="res://textures/ingredients_test.png" type="Texture" id=3]
 [ext_resource path="res://textures/deliver.png" type="Texture" id=4]
 [ext_resource path="res://resources/bigfont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://textures/patience.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
@@ -39,6 +40,7 @@ scale = Vector2( 0.5, 0.5 )
 margin_right = 494.0
 margin_bottom = 259.0
 custom_colors/font_color = Color( 0.0313726, 0, 1, 1 )
+custom_colors/font_color_hover = Color( 0.870588, 0, 1, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "Deliver"
 flat = true
@@ -48,3 +50,9 @@ z_index = -1
 texture = ExtResource( 4 )
 centered = false
 offset = Vector2( 0, -128 )
+
+[node name="patience" type="Sprite" parent="."]
+position = Vector2( -355, -13 )
+texture = ExtResource( 6 )
+hframes = 4
+vframes = 2

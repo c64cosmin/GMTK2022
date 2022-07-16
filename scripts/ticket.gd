@@ -14,22 +14,25 @@ func _process(delta):
 		destination.y = 0
 	else:
 		destination.y = -(length-1)*256*0.5
-	$Area2D.scale.y = length
-	$Area2D.position.y = length*256*0.5/2
+	$Area2D.scale.y = (length+1)
+	$Area2D.position.y = $Area2D.scale.y*256*0.5/2
 	patience -= delta*patience_multiplier
-	if patience < 50:
-		$patience.frame = 1
-	if patience < 40:
-		$patience.frame = 2
-	if patience < 30:
-		$patience.frame = 3
-	if patience < 20:
-		$patience.frame = 4
-	if patience < 10:
-		$patience.frame = 5
+	set_patience_face($patience)
 	if patience < 0:
 		failed_ticket()
 
+func set_patience_face(face):
+	if patience < 50:
+		face.frame = 1
+	if patience < 40:
+		face.frame = 2
+	if patience < 30:
+		face.frame = 3
+	if patience < 20:
+		face.frame = 4
+	if patience < 10:
+		face.frame = 5
+	
 func create_recipe(l, p, pm):
 	set_length(ceil(l*90/128+0.5))
 	for i in range(0, l):
@@ -75,15 +78,17 @@ func _on_clicked():
 	for item in $items.get_children():
 		ingredients.push_back(item.frame)
 	get_node("/root/game/bowl").set_needed_ingredients(ingredients)
+	visible = false
 	remove_ticket_from_bar()
 
 func remove_ticket_from_bar():
 	spawner.remove_ticket(self)
-	self.visible = false
 
 func failed_ticket():
 	remove_ticket_from_bar()
-	queue_free()
-	Gamestate.add_score(-50)
 	if randi()%5 == 0:
 		get_node("/root/game").remove_star()
+	if Gamestate.active_ticket == self:
+		get_node("/root/game/bowl").clean_bowl()
+		Gamestate.active_ticket = null
+	queue_free()

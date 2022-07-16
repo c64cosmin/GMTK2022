@@ -4,7 +4,7 @@ var score = 0
 var mouse_has_child = false
 var item_container = null
 
-var people_patience = 70
+var people_patience = 90
 var active_ticket = null
 
 const Ingredients = {
@@ -23,5 +23,6 @@ const DieTypes = {
 
 func add_score(s):
 	score += s
+	score = ceil(score)
 	if score <= 0:
 		score = 0

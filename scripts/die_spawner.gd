@@ -1,7 +1,7 @@
 extends Node2D
 
 var die = preload("res://objects/die.tscn")
-var spawn_period = 0.3#5
+var spawn_period = 1.5
 var spawn_timer = 0
 var spawning = true
 var max_die = 7
