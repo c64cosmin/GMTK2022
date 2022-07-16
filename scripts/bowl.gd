@@ -90,7 +90,7 @@ func submit_score():
 				low_score_chance += 10
 			if Gamestate.active_ticket.patience <= 20:
 				low_score_chance += 10
-		low_score_chance += missed_ingredients*5
+		low_score_chance += missed_ingredients*10
 		if randi()%100 < low_score_chance:
 			get_node("/root/game").remove_star()
 	final_score = ceil(max(0,final_score - errors))

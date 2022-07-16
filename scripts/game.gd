@@ -10,6 +10,8 @@ func _ready():
 func _process(delta):
 	$score.text = "Score: " + String(Gamestate.score)
 	Gamestate.people_patience -= delta*0.07
+	if $rating/stars.get_child_count() == 0 and $rating/dying_stars.get_child_count() == 0:
+		game_over()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -31,11 +33,10 @@ func add_stars(n):
 
 func remove_star():
 	var poc_star = dying_star.instance()
-	$stars.add_child(poc_star)
-	poc_star.position.x = stars*64
+	$rating/dying_stars.add_child(poc_star)
+	poc_star.position.x = (stars-1)*64
+	poc_star.position.y = 0
 	add_stars(stars - 1)
-	if stars == 0:
-		game_over()
 
 func game_over():
 	get_tree().change_scene("res://scenes/gameover.tscn")
