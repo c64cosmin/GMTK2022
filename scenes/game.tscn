@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://objects/die_spawner.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://objects/bowl.tscn" type="PackedScene" id=6]
 [ext_resource path="res://resources/bigfont_material.tres" type="Material" id=7]
 [ext_resource path="res://resources/UnderAttack.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://textures/texture.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -41,3 +42,21 @@ margin_right = 2330.0
 margin_bottom = 250.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Score:"
+
+[node name="stars" type="Node2D" parent="."]
+position = Vector2( 1487, 148 )
+
+[node name="star" type="Sprite" parent="stars"]
+visible = false
+position = Vector2( -32, -23 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="rating" type="RichTextLabel" parent="."]
+material = ExtResource( 7 )
+margin_left = 1177.0
+margin_top = 91.0
+margin_right = 2332.0
+margin_bottom = 336.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Rating:"

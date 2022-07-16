@@ -5,9 +5,8 @@ var length = 1
 var destination = Vector2.ZERO
 var moving_speed = 1200
 var spawner = null
-
-func _ready():
-	create_recipe(3+randi()%5)
+var patience = 1
+var patience_multiplier = 1
 
 func _process(delta):
 	move_to_destination(delta)
@@ -17,17 +16,21 @@ func _process(delta):
 		destination.y = -(length-1)*256*0.5
 	$Area2D.scale.y = length
 	$Area2D.position.y = length*256*0.5/2
+	patience -= delta*patience_multiplier
 
-func create_recipe(l):
+func create_recipe(l, p, pm):
 	set_length(ceil(l*90/128+0.5))
 	for i in range(0, l):
 		create_item(i)
+	patience = p
+	patience_multiplier = pm
 
 func set_length(l):
 	length = l
 	for i in range(0, l-1):
 		create_paper_part(i, false)
 	create_paper_part(l-1, true)
+	$patience.position.y = (l+0.6) * 128
 
 func create_paper_part(position, end):
 	var new_paper = $paper/paper_template.duplicate()

@@ -77,3 +77,5 @@ func submit_score():
 	var decrease = max(0,errors*0.5 - 20)
 	final_score = ceil(max(0,final_score - errors))
 	Gamestate.score += final_score - decrease
+	if Gamestate.score <= 0:
+		Gamestate.score = 0

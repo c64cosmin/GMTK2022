@@ -22,6 +22,9 @@ func spawn():
 		add_child(new_ticket)
 		new_ticket.global_transform.origin = global_transform.origin
 		new_ticket.spawner = self
+		var patience = Gamestate.people_patience + randi()%10
+		var patience_multiplier = 1 - randf()*0.5
+		new_ticket.create_recipe(3+randi()%5, patience, patience_multiplier)
 		tickets.push_back(new_ticket)
 
 func arrange_tickets():
