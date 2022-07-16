@@ -13,7 +13,7 @@ func _on_credits():
 	get_tree().change_scene("res://scenes/credits.tscn")
 
 func _on_hi_score():
-	print("show hi score")
+	get_tree().change_scene("res://scenes/hiscores.tscn")
 
 func _input(event):
 	if event is InputEventMouseButton:
