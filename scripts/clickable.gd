@@ -10,6 +10,7 @@ var mouse_position = Vector2.ZERO
 func _ready():
 	$Area2D.connect("mouse_entered", self, "on_mouse_entered")
 	$Area2D.connect("mouse_exited", self, "on_mouse_exited")
+	$Area2D/Button.connect("pressed", self, "_on_clicked")
 
 func _process(delta):
 	if dragged and draggable:
