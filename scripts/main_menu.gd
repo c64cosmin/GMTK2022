@@ -21,12 +21,6 @@ func _on_credits():
 func _on_hi_score():
 	get_tree().change_scene("res://scenes/hiscores.tscn")
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if Input.is_action_pressed("click"):
-			if not OS.is_debug_build() and not OS.window_fullscreen:
-				OS.window_fullscreen = true
-
 func _on_gameover():
 	Gamestate.score = 1234 + randi()%1000
 	get_tree().change_scene("res://scenes/gameover.tscn")

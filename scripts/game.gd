@@ -39,12 +39,6 @@ func _process(delta):
 	if $rating/stars.get_child_count() == 0 and $rating/dying_stars.get_child_count() == 0:
 		game_over()
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if Input.is_action_pressed("click"):
-			if not OS.is_debug_build() and not OS.window_fullscreen:
-				OS.window_fullscreen = true
-
 func add_stars(n):
 	if n < stars:
 		$lose_star.play()

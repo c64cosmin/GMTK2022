@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if Input.is_action_pressed(\"click\"):
+			if not OS.is_debug_build() and not OS.window_fullscreen:
+				OS.window_fullscreen = true
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			if not OS.is_debug_build() and not OS.window_fullscreen:
+				OS.window_fullscreen = true
+"
+
+[node name="fullscreen" type="Node"]
+script = SubResource( 1 )

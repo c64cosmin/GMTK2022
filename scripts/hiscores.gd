@@ -17,9 +17,3 @@ func _on_downloaded():
 
 func _on_exit():
 	get_tree().change_scene("res://scenes/main_menu.tscn")
-
-func _input(event):
-	if event is InputEventMouseButton:
-		if Input.is_action_pressed("click"):
-			if not OS.is_debug_build() and not OS.window_fullscreen:
-				OS.window_fullscreen = true

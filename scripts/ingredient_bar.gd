@@ -40,7 +40,7 @@ func spawn_ingredient(position, ing_type):
 	if has_empty_space():
 		var new_ingredient = ingredient.instance()
 		get_parent().add_child(new_ingredient)
-		new_ingredient.transform.origin = position
+		new_ingredient.global_transform.origin = position
 		new_ingredient.set_type(ing_type)
 		new_ingredient.bar = self
 		add_ingredient(new_ingredient)
