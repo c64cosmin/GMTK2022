@@ -1,9 +1,17 @@
 extends Node2D
 
 var slides = [
-	preload("res://textures/background.png"),
-	preload("res://textures/bubble.png"),
-	preload("res://textures/deliver.png")
+	preload("res://textures/tutorial/tut1.jpg"),
+	preload("res://textures/tutorial/tut2.jpg"),
+	preload("res://textures/tutorial/tut3.jpg"),
+	preload("res://textures/tutorial/tut4.jpg"),
+	preload("res://textures/tutorial/tut5.jpg"),
+	preload("res://textures/tutorial/tut6.jpg"),
+	preload("res://textures/tutorial/tut7.jpg"),
+	preload("res://textures/tutorial/tut8.jpg"),
+	preload("res://textures/tutorial/tut9.jpg"),
+	preload("res://textures/tutorial/tut10.jpg"),
+	preload("res://textures/tutorial/tut11.jpg")
 ]
 var current_slide = 0
 
