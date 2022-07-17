@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/bigfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/bigfont_material.tres" type="Material" id=2]
 [ext_resource path="res://resources/titlefont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/credits.gd" type="Script" id=4]
 [ext_resource path="res://sounds/credits_music.mp3" type="AudioStream" id=5]
+[ext_resource path="res://scenes/logo/luci_insta.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/logo/luci_yt.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/logo/twitter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/logo/discord.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/logo/youtube.tscn" type="PackedScene" id=10]
 
 [node name="credits" type="Node2D"]
 script = ExtResource( 4 )
@@ -21,24 +26,51 @@ text = "credits"
 
 [node name="text" type="RichTextLabel" parent="."]
 material = ExtResource( 2 )
-margin_left = 235.0
-margin_top = 436.0
-margin_right = 1694.0
-margin_bottom = 788.0
+margin_left = 95.0
+margin_top = 432.0
+margin_right = 1554.0
+margin_bottom = 1062.0
 grow_horizontal = 0
 custom_fonts/normal_font = ExtResource( 1 )
-text = "programming                  c64cosmin
+text = "programming        c64cosmin
 
-Artwork                                 Lucian"
+Artwork                    Lucian"
+
+[node name="discord" type="RichTextLabel" parent="."]
+material = ExtResource( 2 )
+margin_left = 93.0
+margin_top = 748.0
+margin_right = 1552.0
+margin_bottom = 1378.0
+grow_horizontal = 0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "
+Join discord"
+
+[node name="discord" parent="discord" instance=ExtResource( 9 )]
+position = Vector2( 699, 150 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="exit" type="Button" parent="."]
-margin_left = 1656.0
-margin_top = 930.0
-margin_right = 1897.0
-margin_bottom = 1048.0
+margin_left = 1641.0
+margin_top = 900.0
+margin_right = 1912.0
+margin_bottom = 1065.0
 custom_fonts/font = ExtResource( 1 )
 text = "back"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -10.0
+
+[node name="twitter" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1507, 478 )
+
+[node name="youtube" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1719, 478 )
+
+[node name="luci_insta" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1507, 690 )
+
+[node name="luci_yt" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1716, 690 )
