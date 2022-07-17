@@ -13,7 +13,7 @@ func _ready():
 		$gameover.visible = true
 
 func _on_start():
-	get_tree().change_scene("res://scenes/game.tscn")
+	get_tree().change_scene("res://scenes/tutorial.tscn")
 
 func _on_credits():
 	get_tree().change_scene("res://scenes/credits.tscn")

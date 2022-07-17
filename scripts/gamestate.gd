@@ -4,6 +4,7 @@ const number_of_ingredients = 4
 const number_of_categories = 3
 
 var window_scale = 1
+var had_tutorial = false
 
 var level = 1
 var difficulty = 1

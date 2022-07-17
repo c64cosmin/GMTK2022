@@ -67,7 +67,7 @@ margin_top = 819.0
 margin_right = 1373.0
 margin_bottom = 949.0
 custom_fonts/font = SubResource( 8 )
-text = "YOUR NAME"
+text = "ENTER YOUR NAME"
 
 [node name="submit" type="Button" parent="."]
 margin_left = 1476.0
