@@ -78,7 +78,7 @@ Rating:"
 position = Vector2( 136, 56 )
 
 [node name="dying_stars" type="Node2D" parent="rating"]
-position = Vector2( 280, 111 )
+position = Vector2( 136, 56 )
 
 [node name="star_template" type="Sprite" parent="rating"]
 visible = false
