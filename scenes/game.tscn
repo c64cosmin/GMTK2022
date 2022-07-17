@@ -38,7 +38,7 @@ position = Vector2( 47, -5 )
 position = Vector2( 1818, 69 )
 
 [node name="ingredient_bar" parent="." instance=ExtResource( 3 )]
-position = Vector2( 64, 966 )
+position = Vector2( 64, 995 )
 
 [node name="recyclebin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 143, 593 )
