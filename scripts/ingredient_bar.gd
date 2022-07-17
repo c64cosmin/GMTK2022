@@ -29,7 +29,7 @@ func arrange_ingredients():
 	for i in range(0, ingredients.size()):
 		var ing = ingredients[i]
 		if ing != null:
-			var offset = Vector2(i*150-floor(i/12)*150*12, -floor(i/12)*150)
+			var offset = Vector2(i*150-floor(i/12)*150*12, -floor(i/12)*150)*Gamestate.window_scale
 			ing.destination = global_transform.origin + offset
 
 func spawn_ingredient_on_die(position, dice_type):

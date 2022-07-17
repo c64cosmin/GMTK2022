@@ -47,7 +47,7 @@ func spawn():
 func arrange_tickets():
 	for i in range(0, tickets.size()):
 		var t = tickets[i]
-		t.destination.x = global_transform.origin.x + i*150
+		t.destination.x = global_transform.origin.x + i*150*Gamestate.window_scale
 
 func remove_ticket(ticket):
 	tickets.erase(ticket)

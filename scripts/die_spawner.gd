@@ -37,5 +37,5 @@ func die_was_rolled(die):
 func arrange_dice():
 	for i in range(0, dices.size()):
 		var d = dices[i]
-		d.destination = global_transform.origin + Vector2(0, i*150)
+		d.destination = global_transform.origin + Vector2(0, i*150*Gamestate.window_scale)
 

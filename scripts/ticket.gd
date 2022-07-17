@@ -17,7 +17,7 @@ func _process(delta):
 	if mouse_in:
 		destination.y = 0
 	else:
-		destination.y = -(length-1)*256*0.5
+		destination.y = -(length-1)*256*0.5*Gamestate.window_scale
 	$Area2D.scale.y = (length+1)
 	$Area2D.position.y = $Area2D.scale.y*256*0.5/2
 	patience -= 3*delta*patience_multiplier
