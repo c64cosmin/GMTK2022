@@ -39,6 +39,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "skip"
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.938, 0.938 )
 z_index = -10
 texture = ExtResource( 3 )
 centered = false
