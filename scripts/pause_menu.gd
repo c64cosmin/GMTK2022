@@ -16,4 +16,4 @@ func _on_retry():
 
 func _on_exit():
 	get_tree().paused = false
-	get_tree().change_scene("res://scenes/main_menu.tscn")
+	get_tree().change_scene("res://scenes/gameover.tscn")
