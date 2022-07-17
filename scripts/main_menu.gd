@@ -6,6 +6,9 @@ func _ready():
 	$credits.connect("pressed", self, "_on_credits")
 	$hiscore.connect("pressed", self, "_on_hi_score")
 	$gameover.connect("pressed", self, "_on_gameover")
+	$exit.connect("pressed", self, "_on_exit")
+	if OS.get_name() == "HTML5":
+		$exit.visible = false
 	if OS.is_debug_build():
 		$gameover.visible = true
 
@@ -27,3 +30,6 @@ func _input(event):
 func _on_gameover():
 	Gamestate.score = 1234 + randi()%1000
 	get_tree().change_scene("res://scenes/gameover.tscn")
+
+func _on_exit():
+	get_tree().quit()
