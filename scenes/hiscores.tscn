@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/titlefont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/bigfont_material.tres" type="Material" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://scenes/score_manager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/UnderAttack.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://resources/bigfont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://sounds/credits_music.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/credits_music.mp3" type="AudioStream" id=7]
+[ext_resource path="res://scenes/resizer.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -47,3 +48,5 @@ text = "back"
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -10.0
+
+[node name="resizer" parent="." instance=ExtResource( 8 )]

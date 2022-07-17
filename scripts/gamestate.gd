@@ -3,6 +3,8 @@ extends Node2D
 const number_of_ingredients = 4
 const number_of_categories = 3
 
+var window_scale = 1
+
 var level = 1
 var difficulty = 1
 var score = 0

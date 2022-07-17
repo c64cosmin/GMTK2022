@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _ready():
+	get_tree().get_root().connect(\"size_changed\", self, \"scale_stuff\")
+	scale_stuff()
+
+func scale_stuff():
+	var scale = get_viewport().size.x / 1920
+	get_parent().scale = Vector2(scale, scale)
+	Gamestate.window_scale = scale
+"
+
+[node name="resizer" type="Node"]
+script = SubResource( 1 )
