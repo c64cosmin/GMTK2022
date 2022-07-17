@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/male_thanks.wav-2ac4e731f5a5758233ce84aa91edfa45.sample"
+
+[deps]
+
+source_file="res://sounds/male_thanks.wav"
+dest_files=[ "res://.import/male_thanks.wav-2ac4e731f5a5758233ce84aa91edfa45.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

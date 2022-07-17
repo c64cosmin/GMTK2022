@@ -9,6 +9,7 @@ var tickets = []
 var max_tickets = 8
 
 func _ready():
+	print("moinciun")
 	randomize()
 
 func _process(delta):
@@ -27,9 +28,9 @@ func _process(delta):
 				if spawn_period > 10:
 					spawn_period = 10
 			spawn()
-			if randi()% 5 == 0:
+			if randi() % 5 == 0:
 				spawn()
-				if randi()%2 == 0:
+				if randi() % 3 == 0:
 					spawn()
 
 func spawn():
@@ -40,6 +41,8 @@ func spawn():
 		new_ticket.spawner = self
 		new_ticket.create_recipe_list()
 		tickets.push_back(new_ticket)
+		$new_client.pitch_scale = 1.3 + randf()*0.3
+		$new_client.play()
 
 func arrange_tickets():
 	for i in range(0, tickets.size()):

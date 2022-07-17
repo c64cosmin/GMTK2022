@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$music.play()
 	$exit.connect("pressed", self, "_on_exit")
 
 func _on_exit():

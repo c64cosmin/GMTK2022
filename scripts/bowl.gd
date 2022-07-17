@@ -61,6 +61,10 @@ func remove_ingredient(type):
 			return
 	penalty += penalty_counter
 	penalty_counter += 0.6
+	if is_person_male():
+		$male_sigh.play()
+	else:
+		$female_sigh.play()
 
 func submit_food():
 	submit_score()
@@ -95,3 +99,32 @@ func submit_score():
 			get_node("/root/game").remove_star()
 	final_score = ceil(max(0,final_score - errors))
 	Gamestate.add_score(final_score)
+	if Gamestate.active_ticket != null:
+		if is_person_male():
+			if errors > 0:
+				$male_sigh.play()
+			else:
+				$male_thanks.play()
+		else:
+			if errors > 0:
+				$female_sigh.play()
+			else:
+				$female_thanks.play()
+	$receipt.pitch_scale = randf()*0.1 + 1
+	$cash.pitch_scale = randf()*0.1 + 1
+	$receipt.play()
+	if final_score > 0:
+		$cash.play()
+
+func is_person_male():
+	if Gamestate.active_ticket == null:
+		return false
+	var male = true
+	if Gamestate.active_ticket.person_face >= 3:
+		male = false
+	return male
+func get_ingredients_types():
+	var ings = []
+	for ing in $required.get_children():
+		ings.push_back(ing.frame)
+	return ings

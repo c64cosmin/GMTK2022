@@ -175,6 +175,7 @@ func remove_ticket_from_bar():
 	spawner.remove_ticket(self)
 
 func failed_ticket():
+	get_node("/root/game").groan_person(person_face)
 	remove_ticket_from_bar()
 	if randi()%3 == 0:
 		get_node("/root/game").remove_star()

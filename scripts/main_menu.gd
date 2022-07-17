@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$music.play()
 	$start.connect("pressed", self, "_on_start")
 	$credits.connect("pressed", self, "_on_credits")
 	$hiscore.connect("pressed", self, "_on_hi_score")

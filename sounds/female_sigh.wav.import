@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/female_sigh.wav-971e229365c7f7c87f8ef0b841bc53fb.sample"
+
+[deps]
+
+source_file="res://sounds/female_sigh.wav"
+dest_files=[ "res://.import/female_sigh.wav-971e229365c7f7c87f8ef0b841bc53fb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

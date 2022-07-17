@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/male_angry.wav-9e8aa504b49d4ed9bd9c5a3b0c0d8ae1.sample"
+
+[deps]
+
+source_file="res://sounds/male_angry.wav"
+dest_files=[ "res://.import/male_angry.wav-9e8aa504b49d4ed9bd9c5a3b0c0d8ae1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

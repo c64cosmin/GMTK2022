@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/bigfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/bigfont_material.tres" type="Material" id=2]
 [ext_resource path="res://resources/titlefont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/credits.gd" type="Script" id=4]
+[ext_resource path="res://sounds/credits_music.wav" type="AudioStream" id=5]
 
 [node name="credits" type="Node2D"]
 script = ExtResource( 4 )
@@ -37,3 +38,7 @@ margin_right = 1897.0
 margin_bottom = 1048.0
 custom_fonts/font = ExtResource( 1 )
 text = "back"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0

@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$music.play()
 	$exit.connect("pressed", self, "_on_exit")
 	$score_manager.connect("score_downloaded", self, "_on_downloaded")
 	$score_manager.get_score()

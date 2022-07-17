@@ -32,7 +32,7 @@ const DieTypes = {
 	Vegetable = 0,
 	Filler = 1,
 	Meat = 2,
-	Seasoning = 3
+	Wildcard = 3
 }
 
 func add_score(s):

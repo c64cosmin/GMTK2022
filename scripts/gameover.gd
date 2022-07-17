@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$music.play()
 	$menu/retry.connect("pressed", self, "_on_retry")
 	$menu/exit.connect("pressed", self, "_on_exit")
 	$submit_score.connect("done", self, "_on_done")

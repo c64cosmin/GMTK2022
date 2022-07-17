@@ -21,8 +21,9 @@ func debug():
 
 func _process(delta):
 	debug()
+	music()
 	$score.text = "Score: " + String(Gamestate.score)
-	$nextclient.text = "Next client in " + str(ceil($ticket_creator.spawn_timer)) + "seconds"
+	$nextclient.text = "Next client in " + str(floor($ticket_creator.spawn_timer+0.5)) + "seconds"
 	Gamestate.people_patience -= delta*0.07
 	Gamestate.difficulty += delta*0.1
 	if Gamestate.difficulty > 20:
@@ -31,7 +32,7 @@ func _process(delta):
 		Gamestate.level += 1
 		Gamestate.difficulty = 1
 		$ticket_creator.spawn_period = 15
-		$ticket_creator.spawn_timer = 20
+		$ticket_creator.spawn_timer = 30
 		if Gamestate.level >= 4:
 			Gamestate.level = 4
 		
@@ -45,13 +46,15 @@ func _input(event):
 				OS.window_fullscreen = true
 
 func add_stars(n):
+	if n < stars:
+		$lose_star.play()
 	stars = n
 	for star in $rating/stars.get_children():
 		star.remove_child(star)
 		star.queue_free()
 	for i in range(0,n):
 		var new_star = $rating/star_template.duplicate()
-		new_star.position.x += i*64
+		new_star.position.x += i*40
 		new_star.rotation = randf()*360
 		new_star.visible = true
 		$rating/stars.add_child(new_star)
@@ -65,3 +68,19 @@ func remove_star():
 
 func game_over():
 	get_tree().change_scene("res://scenes/gameover.tscn")
+
+func groan_person(person_face):
+	if person_face >= 3:
+		$female_angry.play()
+	else:
+		$male_angry.play()
+
+func music():
+	if not $pause_menu.visible:
+		if not $music.playing:
+			$music.play()
+		if not $background_noise.playing:
+			$background_noise.play()
+	else:
+		$music.stop()
+		$background_noise.stop()

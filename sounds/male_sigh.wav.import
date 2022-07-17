@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/male_sigh.wav-de27f383ef5bf47f91f79598b4647774.sample"
+
+[deps]
+
+source_file="res://sounds/male_sigh.wav"
+dest_files=[ "res://.import/male_sigh.wav-de27f383ef5bf47f91f79598b4647774.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

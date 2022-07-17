@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rolled_dice.wav-c87ba692aeecbec17d1b7646058dd160.sample"
+
+[deps]
+
+source_file="res://sounds/rolled_dice.wav"
+dest_files=[ "res://.import/rolled_dice.wav-c87ba692aeecbec17d1b7646058dd160.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
