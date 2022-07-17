@@ -8,6 +8,7 @@ var slides = [
 	preload("res://textures/tutorial/tut5.jpg"),
 	preload("res://textures/tutorial/tut6.jpg"),
 	preload("res://textures/tutorial/tut7.jpg"),
+	preload("res://textures/tutorial/tut7.5.jpg"),
 	preload("res://textures/tutorial/tut8.jpg"),
 	preload("res://textures/tutorial/tut9.jpg"),
 	preload("res://textures/tutorial/tut10.jpg"),
